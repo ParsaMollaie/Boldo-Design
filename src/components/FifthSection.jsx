@@ -61,17 +61,18 @@ const FifthSection = () => {
             marginTop: "1rem",
             display: "flex",
             justifyContent: "center",
-            paddingRight: "15rem",
-            paddingLeft: "15rem",
+            paddingRight: { xs: "3rem", sm: "4rem", md: "6rem", lg: "15rem" },
+            paddingLeft: { xs: "3rem", sm: "4rem", md: "6rem", lg: "15rem" },
           }}
         >
-          <Grid item xs={6}>
+          <Grid item xs={10} sm={6}>
             <Item>
               <Typography
                 sx={{
-                  fontSize: "50px",
+                  fontSize: { xs: "35px", sm: "50px" },
                   fontWeight: "fontWeightLight",
                   color: "primary.light",
+                  textAlign: { xs: "center", sm: "left" },
                 }}
               >
                 We are{" "}
@@ -79,8 +80,9 @@ const FifthSection = () => {
                   sx={{
                     display: "inline",
                     color: "primary.main",
-                    fontSize: "50px",
+                    fontSize: { xs: "35px", sm: "50px" },
                     fontWeight: "fontWeightLight",
+                    textAlign: { xs: "center", sm: "left" },
                   }}
                 >
                   commited.
@@ -96,6 +98,7 @@ const FifthSection = () => {
                 fontSize: "20px",
                 textAlign: "left",
                 fontWeight: "fontWeightLight",
+                display: { xs: "none", sm: "block" },
                 // width: "65%",
               }}
             >
@@ -106,13 +109,14 @@ const FifthSection = () => {
             </Item>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={10} sm={6}>
             <Item>
               <Typography
                 sx={{
-                  fontSize: "50px",
+                  fontSize: { xs: "35px", sm: "50px" },
                   fontWeight: "fontWeightLight",
                   color: "primary.light",
+                  textAlign: { xs: "center", sm: "left" },
                 }}
               >
                 We are{" "}
@@ -120,8 +124,9 @@ const FifthSection = () => {
                   sx={{
                     display: "inline",
                     color: "primary.main",
-                    fontSize: "50px",
+                    fontSize: { xs: "35px", sm: "50px" },
                     fontWeight: "fontWeightLight",
+                    textAlign: { xs: "center", sm: "left" },
                   }}
                 >
                   responsible.
@@ -137,6 +142,7 @@ const FifthSection = () => {
                 fontSize: "20px",
                 textAlign: "left",
                 fontWeight: "fontWeightLight",
+                display: { xs: "none", sm: "block" },
                 // width: "65%",
               }}
             >
@@ -147,13 +153,14 @@ const FifthSection = () => {
             </Item>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={10} sm={6}>
             <Item>
               <Typography
                 sx={{
-                  fontSize: "50px",
+                  fontSize: { xs: "35px", sm: "50px" },
                   fontWeight: "fontWeightLight",
                   color: "primary.light",
+                  textAlign: { xs: "center", sm: "left" },
                 }}
               >
                 We aim for{" "}
@@ -161,8 +168,9 @@ const FifthSection = () => {
                   sx={{
                     display: "inline",
                     color: "primary.main",
-                    fontSize: "50px",
+                    fontSize: { xs: "35px", sm: "50px" },
                     fontWeight: "fontWeightLight",
+                    textAlign: { xs: "center", sm: "left" },
                   }}
                 >
                   progress.
@@ -178,6 +186,7 @@ const FifthSection = () => {
                 fontSize: "20px",
                 textAlign: "left",
                 fontWeight: "fontWeightLight",
+                display: { xs: "none", sm: "block" },
                 // width: "65%",
               }}
             >

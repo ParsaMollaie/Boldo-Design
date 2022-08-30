@@ -11,14 +11,28 @@ const ColumnBox = styled(Box)({
   marginTop: "7rem",
 });
 
-const RowBox = styled(Box)({
+const RowBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
   textAlign: "center",
   justifyContent: "space-evenly",
   marginTop: "3rem",
-});
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "3rem",
+  },
+}));
+
+const RowBoxItem = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  textAlign: "left",
+  [theme.breakpoints.down("md")]: {
+    textAlign: "center",
+  },
+}));
 
 const SecondSection = () => {
   return (
@@ -41,10 +55,11 @@ const SecondSection = () => {
         </Container>
       </ColumnBox>
       <RowBox>
-        <Box
-          sx={{ display: "flex", flexDirection: "column", textAlign: "left" }}
-        >
-          <Typography color="secondary" sx={{ fontSize: "6rem" }}>
+        <RowBoxItem>
+          <Typography
+            color="secondary"
+            sx={{ fontSize: { sm: "6rem", xs: "5rem" } }}
+          >
             120m
           </Typography>
           <Typography
@@ -53,11 +68,12 @@ const SecondSection = () => {
           >
             Cool feature title
           </Typography>
-        </Box>
-        <Box
-          sx={{ display: "flex", flexDirection: "column", textAlign: "left" }}
-        >
-          <Typography color="secondary" sx={{ fontSize: "6rem" }}>
+        </RowBoxItem>
+        <RowBoxItem>
+          <Typography
+            color="secondary"
+            sx={{ fontSize: { sm: "6rem", xs: "5rem" } }}
+          >
             10.000
           </Typography>
           <Typography
@@ -66,11 +82,12 @@ const SecondSection = () => {
           >
             Cool feature title
           </Typography>
-        </Box>
-        <Box
-          sx={{ display: "flex", flexDirection: "column", textAlign: "left" }}
-        >
-          <Typography color="secondary" sx={{ fontSize: "6rem" }}>
+        </RowBoxItem>
+        <RowBoxItem>
+          <Typography
+            color="secondary"
+            sx={{ fontSize: { sm: "6rem", xs: "5rem" } }}
+          >
             240
           </Typography>
           <Typography
@@ -79,7 +96,7 @@ const SecondSection = () => {
           >
             Cool feature title
           </Typography>
-        </Box>
+        </RowBoxItem>
       </RowBox>
     </>
   );

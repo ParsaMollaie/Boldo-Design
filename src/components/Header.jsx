@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 
 const MainDiv = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
+  width: "100%",
 }));
 
 const Header = () => {

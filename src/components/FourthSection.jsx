@@ -8,12 +8,17 @@ const ContainerDiv = styled(Box)({
   width: "100%",
 });
 
-const CardDiv = styled(Box)({
+const CardDiv = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   gap: "5rem",
-});
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "3rem",
+  },
+}));
 
 const ImageCard = styled(Box)({
   display: "flex",
@@ -28,13 +33,23 @@ const ImageDiv = styled(Box)({
   justifyContent: "center",
 });
 
-const ImageList = styled(Box)({
+const ImageList = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   gap: "22rem",
   marginTop: "5rem",
-});
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "3rem",
+  },
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "3rem",
+  },
+}));
 
 const ImageListItem = styled(Box)({
   display: "flex",
@@ -90,8 +105,8 @@ const FourthSection = () => {
           <Box
             component="img"
             sx={{
-              height: 300,
-              width: 300,
+              height: { xs: 210, sm: 250, md: 280 },
+              width: { xs: 210, sm: 250, md: 280 },
               borderRadius: "15px",
             }}
             alt="Micheal scott image."
@@ -100,11 +115,17 @@ const FourthSection = () => {
 
           <Typography
             color="common"
-            sx={{ fontSize: "25px", fontWeight: "fontWeightRegular" }}
+            sx={{
+              fontSize: { xs: "20px", sm: "25px" },
+              fontWeight: "fontWeightRegular",
+            }}
           >
             Micheal Scott
           </Typography>
-          <Typography color="info.main" sx={{ fontSize: "17px" }}>
+          <Typography
+            color="info.main"
+            sx={{ fontSize: { xs: "15px", sm: "17px" } }}
+          >
             General Manager
           </Typography>
         </ImageCard>
@@ -112,8 +133,8 @@ const FourthSection = () => {
           <Box
             component="img"
             sx={{
-              height: 300,
-              width: 300,
+              height: { xs: 210, sm: 250, md: 280 },
+              width: { xs: 210, sm: 250, md: 280 },
               borderRadius: "15px",
             }}
             alt="Micheal scott image."
@@ -121,11 +142,17 @@ const FourthSection = () => {
           />
           <Typography
             color="common"
-            sx={{ fontSize: "25px", fontWeight: "fontWeightRegular" }}
+            sx={{
+              fontSize: { xs: "20px", sm: "25px" },
+              fontWeight: "fontWeightRegular",
+            }}
           >
             Micheal Scott
           </Typography>
-          <Typography color="info.main" sx={{ fontSize: "15px" }}>
+          <Typography
+            color="info.main"
+            sx={{ fontSize: { xs: "15px", sm: "17px" } }}
+          >
             General Manager
           </Typography>
         </ImageCard>
@@ -134,8 +161,8 @@ const FourthSection = () => {
             <Box
               component="img"
               sx={{
-                height: 300,
-                width: 300,
+                height: { xs: 210, sm: 250, md: 280 },
+                width: { xs: 210, sm: 250, md: 280 },
                 borderRadius: "15px",
               }}
               alt="Micheal scott image."
@@ -144,11 +171,17 @@ const FourthSection = () => {
           </Box>
           <Typography
             color="common"
-            sx={{ fontSize: "25px", fontWeight: "fontWeightRegular" }}
+            sx={{
+              fontSize: { xs: "20px", sm: "25px" },
+              fontWeight: "fontWeightRegular",
+            }}
           >
             Micheal Scott
           </Typography>
-          <Typography color="info.main" sx={{ fontSize: "15px" }}>
+          <Typography
+            color="info.main"
+            sx={{ fontSize: { xs: "15px", sm: "17px" } }}
+          >
             General Manager
           </Typography>
         </ImageCard>
@@ -159,8 +192,8 @@ const FourthSection = () => {
             <Box
               component="img"
               sx={{
-                height: 150,
-                width: 150,
+                height: { xs: 120, sm: 150 },
+                width: { xs: 120, sm: 150 },
                 borderRadius: "15px",
               }}
               alt="Dwight image."
@@ -170,7 +203,7 @@ const FourthSection = () => {
               <Typography
                 color="common"
                 sx={{
-                  fontSize: "25px",
+                  fontSize: { xs: "20px", sm: "25px" },
                   fontWeight: "fontWeightRegular",
                   margin: "8px",
                 }}
@@ -179,7 +212,7 @@ const FourthSection = () => {
               </Typography>
               <Typography
                 color="info.main"
-                sx={{ fontSize: "15px", margin: "8px" }}
+                sx={{ fontSize: { xs: "15px", sm: "17px" }, margin: "8px" }}
               >
                 General Manager
               </Typography>
@@ -190,8 +223,8 @@ const FourthSection = () => {
             <Box
               component="img"
               sx={{
-                height: 150,
-                width: 150,
+                height: { xs: 120, sm: 150 },
+                width: { xs: 120, sm: 150 },
                 borderRadius: "15px",
               }}
               alt="Dwight image."
@@ -201,7 +234,7 @@ const FourthSection = () => {
               <Typography
                 color="common"
                 sx={{
-                  fontSize: "25px",
+                  fontSize: { xs: "20px", sm: "25px" },
                   fontWeight: "fontWeightRegular",
                   margin: "8px",
                 }}
@@ -210,7 +243,7 @@ const FourthSection = () => {
               </Typography>
               <Typography
                 color="info.main"
-                sx={{ fontSize: "15px", margin: "8px" }}
+                sx={{ fontSize: { xs: "15px", sm: "17px" }, margin: "8px" }}
               >
                 General Manager
               </Typography>
@@ -223,8 +256,8 @@ const FourthSection = () => {
             <Box
               component="img"
               sx={{
-                height: 150,
-                width: 150,
+                height: { xs: 120, sm: 150 },
+                width: { xs: 120, sm: 150 },
                 borderRadius: "15px",
               }}
               alt="Dwight image."
@@ -234,7 +267,7 @@ const FourthSection = () => {
               <Typography
                 color="common"
                 sx={{
-                  fontSize: "25px",
+                  fontSize: { xs: "20px", sm: "25px" },
                   fontWeight: "fontWeightRegular",
                   margin: "8px",
                 }}
@@ -243,7 +276,7 @@ const FourthSection = () => {
               </Typography>
               <Typography
                 color="info.main"
-                sx={{ fontSize: "15px", margin: "8px" }}
+                sx={{ fontSize: { xs: "15px", sm: "17px" }, margin: "8px" }}
               >
                 General Manager
               </Typography>
@@ -254,8 +287,8 @@ const FourthSection = () => {
             <Box
               component="img"
               sx={{
-                height: 150,
-                width: 150,
+                height: { xs: 120, sm: 150 },
+                width: { xs: 120, sm: 150 },
                 borderRadius: "15px",
               }}
               alt="Dwight image."
@@ -265,7 +298,7 @@ const FourthSection = () => {
               <Typography
                 color="common"
                 sx={{
-                  fontSize: "25px",
+                  fontSize: { xs: "20px", sm: "25px" },
                   fontWeight: "fontWeightRegular",
                   margin: "8px",
                 }}
@@ -274,7 +307,7 @@ const FourthSection = () => {
               </Typography>
               <Typography
                 color="info.main"
-                sx={{ fontSize: "15px", margin: "8px" }}
+                sx={{ fontSize: { xs: "15px", sm: "17px" }, margin: "8px" }}
               >
                 General Manager
               </Typography>

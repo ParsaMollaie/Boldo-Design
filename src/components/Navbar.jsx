@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import {
   AppBar,
@@ -8,23 +8,33 @@ import {
   Button,
   Link,
   Typography,
+  MenuItem,
+  Menu,
 } from "@mui/material";
 import { shape } from "@mui/system";
 import { common } from "@mui/material/colors";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const StyledToolbar = styled(Toolbar)({
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   padding: "0 !important",
   paddingBottom: "2rem !important",
-});
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+}));
 
-const MyNav = styled(AppBar)({
+const MyNav = styled(AppBar)(({ theme }) => ({
   padding: "2rem 4rem 7rem 4rem",
   width: "100%",
   position: "relative",
-});
+  [theme.breakpoints.down("sm")]: {
+    borderColor: "error.main",
+  },
+}));
 
 const Section1 = styled(Box)({
   display: "flex",
@@ -34,6 +44,7 @@ const Section1 = styled(Box)({
 });
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <MyNav>
       <StyledToolbar>
@@ -63,7 +74,7 @@ const Navbar = () => {
             Boldo
           </Link>
         </Box>
-        <Box sx={{ display: "flex", gap: "10px" }}>
+        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: "10px" }}>
           <Button variant="text" color="secondary">
             Product
           </Button>
@@ -86,6 +97,34 @@ const Navbar = () => {
             Log In
           </Button>
         </Box>
+        <Box
+          sx={{
+            display: { xs: "block", sm: "none" },
+          }}
+        >
+          <Box onClick={(e) => setOpen(!open)}>
+            <MenuIcon />
+          </Box>
+          <Menu
+            id="demo-positioned-menu"
+            aria-labelledby="demo-positioned-button"
+            open={open}
+            onClose={(e) => setOpen(false)}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <MenuItem onClick={(e) => setOpen(false)}>Product</MenuItem>
+            <MenuItem onClick={(e) => setOpen(false)}>Services</MenuItem>
+            <MenuItem onClick={(e) => setOpen(false)}>About</MenuItem>
+            <MenuItem onClick={(e) => setOpen(false)}>Log In</MenuItem>
+          </Menu>
+        </Box>
       </StyledToolbar>
       <Section1>
         <Box
@@ -99,12 +138,15 @@ const Navbar = () => {
           </Typography>
           <Typography
             color="secondary"
-            sx={{ fontSize: "50px", fontWeight: "fontWeightRegular" }}
+            sx={{
+              fontSize: { xs: "35px", sm: "50px" },
+              fontWeight: "fontWeightRegular",
+            }}
           >
             We love to make greate things, things that matter.
           </Typography>
         </Box>
-        <Box color={common}>
+        <Box color={common} sx={{ display: { xs: "none", sm: "block" } }}>
           Funding handshake buyer business-to-business metrics ipad parentship.
           first mover advantage innovator success deployment non-disclosure.
         </Box>

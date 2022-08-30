@@ -17,6 +17,31 @@ const BoxItem = styled(Box)(({ theme }) => ({
   borderRadius: "10px",
   padding: "4rem 12rem",
   textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    padding: "4rem 4rem",
+  },
+}));
+
+const EmailBox = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+  },
+}));
+
+const EmailInput = styled("input")(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    width: "80% !important",
+  },
+}));
+
+const EmailButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    width: "70%",
+  },
 }));
 
 // const WhiteBorderTextField = styled(TextField)`
@@ -48,22 +73,23 @@ const Sixth = () => {
           <Typography
             sx={{
               color: "primary.light",
-              fontSize: "50px",
+              fontSize: { xs: "35px", sm: "50px" },
               fontWeight: "fontWeightLight",
             }}
           >
             An enterprise template to ramp up your company website
           </Typography>
         </Box>
-        <Box
+        <EmailBox
           sx={{
             display: "flex",
             justifyContent: "center",
             gap: "15px",
             marginTop: "2rem",
+            width: "100%",
           }}
         >
-          <input
+          <EmailInput
             id="txt_email"
             placeholder="Your email address"
             type="text"
@@ -74,8 +100,8 @@ const Sixth = () => {
               outline: 0,
               border: 0,
             }}
-          ></input>
-          <Button
+          ></EmailInput>
+          <EmailButton
             variant="contained"
             sx={{
               padding: "10px 40px",
@@ -85,8 +111,8 @@ const Sixth = () => {
             }}
           >
             Start now
-          </Button>
-        </Box>
+          </EmailButton>
+        </EmailBox>
       </BoxItem>
     </MyBox>
   );
