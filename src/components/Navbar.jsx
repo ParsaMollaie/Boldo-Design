@@ -31,9 +31,6 @@ const MyNav = styled(AppBar)(({ theme }) => ({
   padding: "2rem 4rem 7rem 4rem",
   width: "100%",
   position: "relative",
-  [theme.breakpoints.down("sm")]: {
-    borderColor: "error.main",
-  },
 }));
 
 const Section1 = styled(Box)({
