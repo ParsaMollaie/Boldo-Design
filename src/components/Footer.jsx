@@ -6,7 +6,7 @@ import React from "react";
 const FlexBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  justifyContent: "cenetr",
+  justifyContent: "center",
   marginTop: "7rem",
   marginBottom: "5rem",
   width: "100%",
@@ -24,7 +24,8 @@ const LeftBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   gap: "2rem",
   textAlign: "left",
-  paddingLeft: "10rem",
+  paddingRight: "5rem",
+  // paddingLeft: "10rem",
   [theme.breakpoints.down("md")]: {
     display: "flex",
     flexDirection: "row",
@@ -39,10 +40,12 @@ const MainGrid = styled(Grid)(({ theme }) => ({
     padding: "2rem",
     justifyContent: "center",
     alignItems: "center",
+    paddingLeft: "10rem",
   },
   [theme.breakpoints.down("sm")]: {
-    display: "none",
+    // display: "none",
     padding: "0",
+    // paddingLeft: "1rem",
   },
 }));
 
@@ -82,122 +85,144 @@ const Footer = () => {
         </Typography>
       </LeftBox>
       <Box>
-        <MainGrid container spacing={4}>
-          <Grid item xs={6} sm={4}>
+        <MainGrid container spacing={{ xs: 1, md: 12 }}>
+          <Grid item xs={12} md={4}>
             <Item
               sx={{
                 color: "secondary.main",
-                fontWeight: "fontWeightBold",
                 fontSize: { xs: "12px", sm: "20px" },
               }}
             >
-              Landings
+              <ul style={{ listStyle: "none", display: "grid", gap: "40px" }}>
+                <li>
+                  <strong>Landings</strong>
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Home
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Products
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Services
+                </li>
+              </ul>
             </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
+          </Grid>{" "}
+          <Grid item xs={12} md={4}>
             <Item
               sx={{
                 color: "secondary.main",
-                fontWeight: "fontWeightBold",
                 fontSize: { xs: "12px", sm: "20px" },
               }}
             >
-              Company
+              <ul style={{ listStyle: "none", display: "grid", gap: "40px" }}>
+                <li>
+                  <strong>Landings</strong>
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Home
+                </li>
+                <Box sx={{ display: "flex" }}>
+                  <li
+                    style={{
+                      color: "#777777",
+                      fontSize: "20px",
+                      fontWeight: "300",
+                    }}
+                  >
+                    Products
+                  </li>
+                  <Typography
+                    sx={{
+                      color: "secondary.main",
+                      fontSize: "13px",
+                      fontWeight: "fontWeightBold",
+                      marginLeft: "12px",
+                      borderRadius: 30,
+                      backgroundColor: "primary.main",
+                      padding: "5px",
+                      display: { sm: "block", xs: "none" },
+                    }}
+                  >
+                    Hiring!
+                  </Typography>
+                </Box>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Services
+                </li>
+              </ul>
             </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
+          </Grid>{" "}
+          <Grid item xs={12} md={4}>
             <Item
               sx={{
                 color: "secondary.main",
-                fontWeight: "fontWeightBold",
                 fontSize: { xs: "12px", sm: "20px" },
               }}
             >
-              Recources
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Home
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Home
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Blog
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Products
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Box
-              sx={{
-                display: "flex",
-              }}
-            >
-              <Item
-                sx={{
-                  fontSize: { xs: "10px", sm: "15px" },
-                  color: "info.main",
-                }}
-              >
-                Careers
-              </Item>
-              <Item
-                sx={{
-                  marginLeft: "12px",
-                  borderRadius: 30,
-                  backgroundColor: "primary.main",
-                  fontWeight: "fontWeightBold",
-                  fontSize: { xs: "10px", sm: "13px" },
-                  padding: "5px",
-                }}
-              >
-                Hiring!
-              </Item>
-            </Box>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Products
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Services
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Services
-            </Item>
-          </Grid>
-          <Grid item xs={5} sm={4}>
-            <Item
-              sx={{ fontSize: { xs: "10px", sm: "15px" }, color: "info.main" }}
-            >
-              Services
+              <ul style={{ listStyle: "none", display: "grid", gap: "40px" }}>
+                <li>
+                  <strong>Landings</strong>
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Home
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Products
+                </li>
+                <li
+                  style={{
+                    color: "#777777",
+                    fontSize: "20px",
+                    fontWeight: "300",
+                  }}
+                >
+                  Services
+                </li>
+              </ul>
             </Item>
           </Grid>
         </MainGrid>
